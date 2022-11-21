@@ -1,0 +1,69 @@
+pow_rad={4356:3000,
+        3775:2600,
+        3340:2300,
+        2904:2000,
+        2614:1800,
+        2323:1600,
+        2033:1400,
+        1742:1200,
+        1452:1000,
+        1307:900,
+        1162:800,
+        1016:700,
+        871:600,
+        726:500,
+        585:400}
+pow_rad1 = reversed(pow_rad)
+
+rad = {}
+nom = 0
+b='1'
+tp = {}
+k=0
+nomer = 0
+        
+
+    
+while True:
+    nomer = nomer + 1
+    print(nomer)
+    print('____________________________________________________________')
+    comand = input('Введите команду : 1) радиаторы 2) теплый пол')
+    if comand == '1':
+        rad={}
+        nom=0
+        while b == '1':
+            
+            a = input('Введите квадратуру: ')
+            a = int(a) * 100
+            for i in pow_rad1:
+                if i > a:
+                    nom = nom + 1
+                    rad[nom] = pow_rad[i]
+                    break
+            b = input('Ёще есть?:')
+                    
+        print ('Список радиаторов:')
+        for i in rad.values():        
+            print (i)
+        b='1'
+
+    elif comand =='2':
+        tp={}
+        k=0
+        summa=0
+        while b == '1':
+            k=k+1
+            a = input('Введите квадратуру: ')
+            d = input('Напишите шаг трубы в см: ')
+            d=int(d)/100
+            dlinna = 1/d * int(a)
+            tp[k]=dlinna
+            b = input('Ёще есть?: ')
+        print ('Список теплого пола:')
+        for i in tp.values():
+            summa = i+summa
+            print(i)
+        print(summa)
+        b='1'
+   
