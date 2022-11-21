@@ -21,14 +21,14 @@ b='1'
 tp = {}
 k=0
 nomer = 0
-        
+h=True       
 
     
-while True:
+while h==True:
     nomer = nomer + 1
     print(nomer)
     print('____________________________________________________________')
-    comand = input('Введите команду : 1) радиаторы 2) теплый пол')
+    comand = input('Введите команду : 1) радиаторы 2) теплый пол3)Выход')
     if comand == '1':
         rad={}
         nom=0
@@ -66,4 +66,7 @@ while True:
             print(i)
         print(summa)
         b='1'
+    elif comand =='3':
+        h=False
+        print('Спасибо за внимание!')
    
